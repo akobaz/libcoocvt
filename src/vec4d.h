@@ -1,7 +1,26 @@
 /***************************************************************************//**
- * @file   vec4d.h
- * @brief  module defining a structure vec4d_t and utility functions for it
- * @author Bazso Akos
+ * @file    vec4d.h
+ * @brief   module defining a structure vec4d_t and utility functions for it
+ * @author  Bazso Akos
+ *
+ * @copyright
+ * Copyright (C) 2012-2019 Bazso Akos
+ *
+ * This file is part of libcoocvt.
+ *
+ * libcoocvt is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * libcoocvt is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with libcoocvt.  If not, see <https://www.gnu.org/licenses/>.
+ *
  ******************************************************************************/
 #pragma once
 #ifndef VEC_4D__H

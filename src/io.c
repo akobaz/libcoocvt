@@ -1,13 +1,32 @@
 /*******************************************************************************
- * MODULE  : io.c
- * PURPOSE : module for input and output of coordinate and element structures
- * AUTHOR  : Bazso Akos
- * VERSION : 1.0, 07 Feb 2012
- *           1.1, 19 Aug 2012
- *           1.2, 29 Aug 2016
- *           1.3, 19 Oct 2016
- *           1.4, 06 Nov 2016
- *           1.5, 27 Feb 2019
+ * @file    io.c
+ * @brief   module for input and output of coordinate and element structures
+ * @author  Bazso Akos
+ * @version 1.0, 07 Feb 2012
+ *          1.1, 19 Aug 2012
+ *          1.2, 29 Aug 2016
+ *          1.3, 19 Oct 2016
+ *          1.4, 06 Nov 2016
+ *          1.5, 09 Mar 2019
+ *
+ * @copyright
+ * Copyright (C) 2012-2019 Bazso Akos
+ *
+ * This file is part of libcoocvt.
+ *
+ * libcoocvt is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * libcoocvt is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with libcoocvt.  If not, see <https://www.gnu.org/licenses/>.
+ *
  ******************************************************************************/
 /* include module headers */
 #include "io.h"

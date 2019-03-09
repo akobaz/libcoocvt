@@ -2,7 +2,7 @@
  * @file    types.h
  * @brief   header file for definitions of coordinate types and structures
  * @author  Bazso Akos
- * @version 1.3, 06 Mar 2019
+ * @version 1.3, 09 Mar 2019
  *
  * @cond
  * VERSION HISTORY:
@@ -10,6 +10,25 @@
  * 1.1, 19 Aug 2012
  * 1.0, 07 Feb 2012
  * @endcond
+ *
+ * @copyright
+ * Copyright (C) 2012-2019 Bazso Akos
+ *
+ * This file is part of libcoocvt.
+ *
+ * libcoocvt is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * libcoocvt is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with libcoocvt.  If not, see <https://www.gnu.org/licenses/>.
+ *
  ******************************************************************************/
 #pragma once
 #ifndef COO_TYPES__H

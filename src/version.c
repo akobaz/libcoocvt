@@ -1,8 +1,28 @@
 /*******************************************************************************
- * MODULE  : version.c
- * PURPOSE : provide version number for Coordinate Conversion Library
- * AUTHOR  : Bazso Akos
- * VERSION : 1.0, 03 Mar 2019
+ * @file    version.c
+ * @brief   provide version number for Coordinate Conversion Library
+ * @author  Bazso Akos
+ * @version 1.0, 03 Mar 2019
+ *          1.1, 09 Mar 2019
+ *
+ * @copyright
+ * Copyright (C) 2019 Bazso Akos
+ *
+ * This file is part of libcoocvt.
+ *
+ * libcoocvt is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * libcoocvt is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with libcoocvt.  If not, see <https://www.gnu.org/licenses/>.
+ *
  ******************************************************************************/
  /* include standard headers */
 #include <stdio.h>
@@ -30,7 +50,7 @@
 /******************************************************************************/
 
 /*******************************************************************************
- *  FUNCTION    : coo_version
+ *  FUNCTION    : coo_show_version
  *  DESCRIPTION : print the library's version number to stdout
  *  INPUT       : none
  *  OUTPUT      : none
@@ -38,7 +58,25 @@
 inline void coo_show_version(void)
 {
     static const char name[] = "Coordinate Conversion Library";
-    fprintf(stdout, "%s v%s\n", name, COO_VERSION);
+    static const char info[] = "Copyright (C) 2012-2019 Bazso Akos";
+    static const char gpl3[] =
+    "This program is free software: you can redistribute it and/or modify\n"
+    "it under the terms of the GNU General Public License as published by\n"
+    "the Free Software Foundation, either version 3 of the License, or\n"
+    "(at your option) any later version.\n"
+    "\n"
+    "This program is distributed in the hope that it will be useful,\n"
+    "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+    "GNU General Public License for more details.\n"
+    "\n"
+    "You should have received a copy of the GNU General Public License\n"
+    "along with this program.  If not, see <https://www.gnu.org/licenses/>.\n";
+    fprintf(
+        stdout,
+        "%s v%s\n%s\n\n%s\n",
+        name, COO_VERSION, info, gpl3
+    );
     return;
 } // end coo_show_version
 

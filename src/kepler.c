@@ -1,14 +1,32 @@
 /*******************************************************************************
- * MODULE  : kepler.c
- * PURPOSE : find numerical solution for elliptic Kepler Equation;
- *           simple version of Kepler Equation Solver
- * AUTHOR  : Bazso Akos
- * VERSION : 1.0, 11 Feb 2012
- *           1.1, 15 Oct 2015
- *           1.2, 19 Oct 2016
- *           1.3, 24 Feb 2019
+ * @file    kepler.c
+ * @brief   find numerical solution for elliptic Kepler Equation
+ * @details simplified version based on Kepler Equation Solver Library
+ * @author  Bazso Akos
+ * @version 1.0, 11 Feb 2012
+ *          1.1, 15 Oct 2015
+ *          1.2, 19 Oct 2016
+ *          1.3, 24 Feb 2019
+ *          1.4, 09 Mar 2019
  *
- * NOTE based on Kepler Equation Solver Library, V1
+ * @copyright
+ * Copyright (C) 2012-2019 Bazso Akos
+ *
+ * This file is part of libcoocvt.
+ *
+ * libcoocvt is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * libcoocvt is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with libcoocvt.  If not, see <https://www.gnu.org/licenses/>.
+ *
  ******************************************************************************/
 /* include standard headers */
 #include <math.h>
@@ -140,39 +158,38 @@ static double itercore(
  *  INPUT       : - value "ecc" for eccentricity 0 <= ecc < 1
  *                - value "ma" for mean anomaly 0 <= ma < pi in radians
  *  OUTPUT      : solution E(e,M) for eccentric anomaly
+ *  REFERENCE   : Markley (1995), Celest. Mech. Dyn. Astron. 63, p.101-111
  ******************************************************************************/
 static double markley(
     const double ecc,
     const double ma
     )
 {
-    double x, a, ad, ak, d, q, r, w;
+    //double x, a, ad, ak, d, q, r, w;
 
     /* calculate parameters */
-    ad  = 1.0 / (M_PISQ - 6.0);
-    ak  = 1.6 * M_PI * ad;
-    ad *= 3.0 * M_PISQ;
-    a   = ad + ak * (M_PI - ma) / (1.0 + ecc);
-    d   = 3.0 * (1.0 - ecc) + a * ecc;
-    q   = 2.0 * a * d * (1.0 - ecc) - ma * ma;
-    r   = 3.0 * a * d * (d - 1.0 + ecc) * ma + ma * ma * ma;
-    w   = cbrt( fabs(r) + sqrt(q * q * q + r * r) );
-    w  *= w;
+    const double tmp = 1.0 / (M_PISQ - 6.0);
+    const double ad  = 3.0 * M_PISQ * tmp;
+    const double ak  = 1.6 * M_PI * tmp;
+    const double a   = ad + ak * (M_PI - ma) / (1.0 + ecc);                 // eq.(20)
+    const double d   = 3.0 * (1.0 - ecc) + a * ecc;                         // eq.(5)
+    const double q   = 2.0 * a * d * (1.0 - ecc) - ma * ma;                 // eq.(9)
+    const double r   = 3.0 * a * d * (d - 1.0 + ecc) * ma + ma * ma * ma;   // eq.(10)
+    double       w   = cbrt( fabs(r) + sqrt(q * q * q + r * r) );           // eq.(14)
+    w               *= w;
 
     /*** STEP #1: find starter from Pade approximation ***/
-    x = 0.0;
+    double x0 = 0.0;
     if ( w > 0.0 )
     {
         /* starter E0 */
-        x = (2.0 * r * w / (w * w + q * w + q * q) + ma) / d;
+        x0 = (2.0 * r * w / (w * w + q * w + q * q) + ma) / d;              // eq.(15)
     } // end if
 
-    /*** STEP #2: fifth order correction ***/
-
-    /* call fifth order method of Danby-Burkardt (1983) for starter */
-    x = itercore(ecc, ma, x);
-
-    return( x );
+    /*** STEP #2: 5th order correction for starter after Danby & Burkardt (1983) ***/
+    return(
+        itercore(ecc, ma, x0)                                               // eq.(24)
+    );
 } // end markley
 
 /******************************************************************************/

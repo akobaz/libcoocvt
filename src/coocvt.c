@@ -1,10 +1,29 @@
 /*******************************************************************************
- * MODULE  : coocvt.c
- * PURPOSE : main module for coordinate conversions
- * AUTHOR  : Bazso Akos
- * VERSION : 1.0, 20 Feb 2012
- *           1.1, 19 Aug 2012
- *           1.2, 06 Mar 2019
+ * @file    coocvt.c
+ * @brief   main module for coordinate conversions
+ * @author  Bazso Akos
+ * @version 1.0, 20 Feb 2012
+ *          1.1, 19 Aug 2012
+ *          1.2, 09 Mar 2019
+ *
+ * @copyright
+ * Copyright (C) 2012-2019 Bazso Akos
+ *
+ * This file is part of libcoocvt.
+ *
+ * libcoocvt is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * libcoocvt is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with libcoocvt.  If not, see <https://www.gnu.org/licenses/>.
+ *
  ******************************************************************************/
 /* include standard headers */
 
@@ -34,11 +53,9 @@
  *                  coordinates, take values from enum cvt_mode_e
  *  OUTPUT      : 0 for success, 1 for error
  ******************************************************************************/
-/* TODO FIXME use bounds fromIdx, uptoIdx
- * TODO FIXME indicate index of central body
- */
 int coocvt(
     body_t         obj[],
+    /*** TODO FIXME use bounds for array obj: fromIdx, uptoIdx ***/
     const uint32_t dim,
     const uint32_t center,
     CVT_MODE_e     mode

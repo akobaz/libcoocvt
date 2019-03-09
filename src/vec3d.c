@@ -1,19 +1,38 @@
 /*******************************************************************************
- * MODULE  : vec3d.c
- * PURPOSE : module defining a structure vec3d_t and utility functions for it
- * AUTHOR  : Bazso Akos
- * VERSION : 1.0, 24 Aug 2011
- *           1.1, 30 Jan 2012
- *           1.2, 06 Feb 2012
- *           1.3, 16 Jun 2012
- *           1.4, 17 Nov 2013
- *           1.5, 15 Apr 2014
- *           1.6, 20 Feb 2019
+ * @file    vec3d.c
+ * @brief   module defining a structure vec3d_t and utility functions for it
+ * @author  Bazso Akos
+ * @version 1.0, 24 Aug 2011
+ *          1.1, 30 Jan 2012
+ *          1.2, 06 Feb 2012
+ *          1.3, 16 Jun 2012
+ *          1.4, 17 Nov 2013
+ *          1.5, 15 Apr 2014
+ *          1.6, 20 Feb 2019
+ *
+ * @copyright
+ * Copyright (C) 2011-2019 Bazso Akos
+ *
+ * This file is part of libcoocvt.
+ *
+ * libcoocvt is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * libcoocvt is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with libcoocvt.  If not, see <https://www.gnu.org/licenses/>.
+ *
  ******************************************************************************/
 /* include standard headers */
 #include <math.h>
 
-/* include module header */
+/* include module headers */
 #include "vec3d.h"
 
 /******************************************************************************/
