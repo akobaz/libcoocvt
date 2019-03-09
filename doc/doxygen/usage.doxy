@@ -1,0 +1,12 @@
+/*! @page Usage How to use the library
+The library consists basically of two files: a header file (\a libcoocvt.h) and a
+library file (either \a libcoocvt.a or \a libcoocvt.so).
+
+For using the library in your own code, include the header \ref libcoocvt.h in
+your program. Place the header file into your program's directory, or in any
+other standard include files directory.
+Additionally, when compiling your program, link to the shared or static
+library. That's all!
+
+Back to the \ref mainpage "Main Page".
+*/

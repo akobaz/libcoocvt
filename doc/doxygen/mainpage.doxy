@@ -1,0 +1,27 @@
+/*! @mainpage
+ * \anchor mainpage
+This is the documentation for the Coordinates Conversion Library ("libcoocvt").
+
+The library provides functions for transforming between different coordinate
+systems frequently in use in Orbital Dynamics and Celestial Mechanics.
+
+Here is the list of available coordinate systems:
+ - Barycentric (center of mass) Cartesian coordinates
+ - Heliocentric Cartesian coordinates
+ - Jacobi Cartesian coordinates
+ - Poincare Cartesian coordinates
+ - Regularized coordinates (Kustaanheimo & Stiefel type)
+ - Delaunay orbital elements
+ - Keplerian orbital elements
+
+The conversion can be run between either of these, although the central type
+of coordinates used are heliocentric coordinates.
+
+For notes on the compilation process, see the \ref Compilation page.
+
+For notes on the usage of the library, see the \ref Usage page. A more complete
+manual is available as \a manual.pdf.
+
+This library is released under the GNU General Public License (GPL) Version 3,
+see the \ref License page.
+*/
